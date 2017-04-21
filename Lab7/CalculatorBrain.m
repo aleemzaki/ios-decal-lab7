@@ -73,6 +73,12 @@
     double input = [_calculationString doubleValue];
     _calculationString = [NSString stringWithFormat:@"%.02f",tan(input) ];
 }
+
+- (void)sinCalc{
+    double input = [_calculationString doubleValue];
+    _calculationString = [NSString stringWithFormat:@"%.02f",sin(input)];
+}
+
 - (void)commitAction {
     double operand1 = [_savedOperand doubleValue];
     double operand2 = [_calculationString doubleValue];
@@ -87,6 +93,14 @@
             break;
         case add:
             total = operand1 + operand2;
+            break;
+//        case greaterthan:
+//            //total = operand1 + operand2;
+//            if (operand1 > operand2){
+//                total = 1;
+//            } else {
+//                total = 0.765;
+//            }
             break;
         default:
             break;
@@ -107,5 +121,7 @@
             _currentAction = tag;
             return false;
     }
+    
+
 }
 @end
